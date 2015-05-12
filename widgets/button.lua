@@ -23,7 +23,7 @@ end
 
 function Button:update()
 	local mx, my = love.mouse.getPosition()
-	if mx > self.x and mx < self.x + self.w and my > self.y and my < self.y + self.h then
+	if mx > self.x-4 and mx < self.x-4 + self.w+8 and my > self.y-2 and my < self.y-2 + self.h+4 then
 		if self.bgcolor[1] < gui.theme.button_highlight_color[1] then self.bgcolor[1] = self.bgcolor[1] + 5 end
 		if self.bgcolor[2] < gui.theme.button_highlight_color[2] then self.bgcolor[2] = self.bgcolor[2] + 5 end
 		if self.bgcolor[3] < gui.theme.button_highlight_color[3] then self.bgcolor[3] = self.bgcolor[3] + 5 end
@@ -40,9 +40,9 @@ end
 function Button:draw()
 	love.graphics.setLineStyle("rough")
 	love.graphics.setColor(self.bgcolor)
-	love.graphics.rectangle("fill", self.x-4, self.y-2, self.font:getWidth(self.text)+8, self.font:getHeight(self.text)+4)
+	love.graphics.rectangle("fill", self.x-4, self.y-2, self.w, self.h)
 	love.graphics.setColor(gui.theme.button_outline_color)
-	love.graphics.rectangle("line", self.x-2, self.y-1, self.font:getWidth(self.text)+5, self.font:getHeight(self.text)+1)
+	love.graphics.rectangle("line", self.x-2, self.y-1, self.w-4, self.h-3)
 	love.graphics.setColor(255, 255, 255)
 	love.graphics.print(self.text, self.x, self.y)
 end

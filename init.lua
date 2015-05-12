@@ -34,7 +34,7 @@ local default_theme = {
 	checkbox_outline_color = {0, 0, 0},
 	checkbox_text_color = {200, 50, 50},
 
-	panel_body_color = {100, 100, 100, 200},
+	panel_body_color = {50, 50, 50, 200},
 	panel_title_color = {100, 100, 100},
 	panel_outline_color = {0, 0, 0}
 }

@@ -94,15 +94,14 @@ function Panel:draw()
 	love.graphics.rectangle("fill", self.x, self.y, self.w, self.h)
 	love.graphics.setColor(gui.theme.panel_outline_color)
 	love.graphics.rectangle("line", self.x, self.y, self.w, self.h)
+
 	-- Title bar
 	love.graphics.setLineStyle("smooth")
-
 	if self.z ~= max(gui.widgets) then
 		love.graphics.setColor(75, 75, 75)
 	else
 		love.graphics.setColor(100, 100, 100)
 	end
-
 	love.graphics.polygon("fill", self.x, self.y-20, self.x+self.w-40, self.y-20, self.x+self.w-20, self.y, self.x, self.y)
 	love.graphics.setColor(gui.theme.panel_outline_color)
 	love.graphics.polygon("line", self.x, self.y-20, self.x+self.w-40, self.y-20, self.x+self.w-20, self.y, self.x, self.y)
